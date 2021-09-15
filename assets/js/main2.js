@@ -29,7 +29,7 @@ const app = Vue.createApp({
           q1: 'ううう',
           // q2: 'かかか',
           // q3: 'ききき',
-        },
+        }
       },
 
       /* それぞれの問題が正解かどうか
@@ -48,7 +48,7 @@ const app = Vue.createApp({
           false, // 3-1
           // false, // 3-2
           // false, // 3-3
-        ],
+        ]
       },
 
       /* ステージの問題が全て正解かどうか */
@@ -63,8 +63,9 @@ const app = Vue.createApp({
       */
       next: {
         stage1: false,
+        stage2: false,
       },
-    },
+    }
   },
   methods: {
     /* 「送信」ボタンをクリックした場合の動作です。 */
@@ -79,7 +80,7 @@ const app = Vue.createApp({
       /* 最終ステージの入力を判定します。 */
       if ( this.clear[stage] === true && final === 'final' ) {
         window.location.href = 'final.html';
-      },
+      }
     },
     /* クリア画面「次のステージへ」ボタンをクリックした時の動作を設定します
     *  clearをfalseにしてクリア画面を非表示にします。
@@ -89,7 +90,7 @@ const app = Vue.createApp({
       this.clear[stage] = false;
       this.next[stage] = true;
     },
-  },
+  }
 })
 
 /* 解答入力欄のコンポーネント */
@@ -102,7 +103,7 @@ app.component('answer-input', {
       ngMessage: 'そのキーワードは違うようだぞ！？',
       message: '',
       inputAnswer: '',
-    },
+    }
   },
   template: `
     <div class="answer__container">
@@ -121,9 +122,9 @@ app.component('answer-input', {
       } else { // 一致しない場合
         this.message = this.ngMessage; 
         this.$emit('answerInput', false);
-      },
+      }
     },
-  },
+  }
 })
 
 app.mount('#stage')
