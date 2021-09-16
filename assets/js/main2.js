@@ -45,7 +45,6 @@ const app = Vue.createApp({
       clear: {
         stage1: false,
         stage2: false,
-        stage3: false,
       },
 
       /* 次のステージを表示するかどうか
